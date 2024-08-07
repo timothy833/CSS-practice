@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timo都能懂的這個網頁怎麼切：方塊酥版面</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"> -->
+  <!-- <script src="https://kit.fontawesome.com/9a8f7718b2.js" crossorigin="anonymous"></script> -->
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Nato Sans TC', Sans-serif;
+    }
+
+    body{
+      background-color: #000;
+    }
+
+    .wrap{
+      width: 100%;
+      margin: auto;
+      /*overflow:hidden 父層可抓到子層高度*/
+      overflow:hidden;
+
+    }
+
+    .item{
+      float: left;
+      position: relative;
+    }
+
+    .item img{
+      width: 100%;
+      vertical-align: middle;
+    }
+
+    .item:first-child{
+      width:50%;
+    }
+
+    .item:first-child ~ .item{
+      width:25%;
+    }
+
+    .item .txt{
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+      text-align: center;
+      color: #fff;
+      background-color: rgba(0, 0, 0, .6);
+      display: flex;
+      /* display: none; */
+      /*opacity: 0 透明度設定  0代表看不到*/
+      opacity: 0;
+      flex-direction: column;
+      justify-content: center;
+      /*align-items可有可無 因為前面text-align: center已經文字居中*/
+      align-items: center;
+      /*scale(0) 視窗尺寸 0代表沒有 配合 transform指令可以達到螢幕縮放效果*/
+      transform: scale(0);
+      transition: .5s;
+    }
+
+    .item:hover .txt{
+      /* display: flex; */
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .item h3{
+      margin-bottom: .4em;
+    }
+
+    .item p{
+      font-weight: 100;
+      line-height: 1.7;
+    }
+    
+  </style>  
+</head>
+<body>
+
+ <div class="wrap">
+  <div class="item">
+    <img src="https://picsum.photos/500/500?random=2">
+    <div class="txt">
+      <h3>提摩都懂切版</h3>
+      <p>提摩都懂的這個網頁怎麼切, 是個人練習作品集的主題, 主要訴求在簡單快速將一個網頁畫面完成, 但也由於時間目前有限，所以主要不是用RWD模式呈現處理，之後會繼續改版改進。</p>
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://picsum.photos/500/500?random=1">
+    <div class="txt">
+      <h3>提摩也懂CSS</h3>
+      <p>提摩都能懂的CSS選取器, 是個人練習作品集的主題之一,內容原理與實務並重, 做完考試不會考一百分, 但可以學到很多。</p>
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://picsum.photos/500/500?random=3">
+    <div class="txt">
+      <h3>提摩還會HTML</h3>
+      <p>提摩都能懂的網頁設計入門, 是新手入門學習規劃一個完整網站練習的切版作品集, 雖然功能簡單但實用度很高, 會努力之後把相關概念發揮到網路上。</p>
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://picsum.photos/500/500?random=4">
+    <div class="txt">
+      <h3>提摩會甚麼?</h3>
+      <p>這是個問句, 提摩會甚麼?這很重要, 因為就算是天才也需要懂畫面切版!</p>
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://picsum.photos/500/500?random=5">
+    <div class="txt">
+      <h3>努力練習自我調整</h3>
+      <p>感謝給我面試機會的公司, 如果未來有緣一定努力跟大家一起合作讓未來公司一起變好, 不多說, 繼續努力練習。</p>
+    </div>
+  </div>
+ </div>
+
+</body>
+</html>

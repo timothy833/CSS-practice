@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timo都能懂的這個網頁怎麼切：文字方塊1</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"> -->
+  <!-- <script src="https://kit.fontawesome.com/9a8f7718b2.js" crossorigin="anonymous"></script> -->
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+    
+    /*畫面reset*/
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      /* font-family: 'Noto Sans TC', Sans-serif; */
+    }
+    
+    /* 設定整體容器寬度/排版布局 還有內邊距 */
+    .container{
+      width: 1200px;
+      margin: auto;
+      display: flex;
+      padding: 100px 0;
+    }
+
+    .container h1{
+      width: 400px;
+      text-align: right;
+      box-sizing: border-box;
+      padding: 20px 15px 0;
+      background-color: #D5C7B9;
+    }
+
+    /*製作黑色底線 注意margin-left: auto; 在flex佈局中會默默吃掉剩下空間導致內容靠右*/
+    .container h1::after{
+      content: '';
+      display: block;
+      height: 4px;
+      width: 4em;
+      background-color: #000;
+      margin-left: auto;
+    }
+
+    .container .txt{
+      width: 800px;
+      box-sizing: border-box;
+      padding: 0 15px;
+      column-count: 2;
+      column-gap: 30px;
+    }
+
+
+
+  
+  </style>  
+</head>
+<body>
+<div class="wrap">
+  <div class="container">
+    <!-- h1 也可以考慮再包一層當作處理方式 <div></div> -->
+    <h1>CSS Timo is Awesome</h1>
+    <div class="txt">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

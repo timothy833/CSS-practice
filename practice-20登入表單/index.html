@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timo都能懂的這個網頁怎麼切：登入表單</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"> -->
+  <!-- <script src="https://kit.fontawesome.com/9a8f7718b2.js" crossorigin="anonymous"></script> -->
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+    
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Noto Sans TC', Sans-serif;
+    }
+
+    /*定義畫面高度*/
+    /*預設html高度是被裡面內容撐開的*/
+    html,body{
+      height: 100%;
+    }
+
+
+    /*CSS filter 属性用于在元素（包括背景图像、文本和其他内容）上应用图形效果，如模糊、亮度、对比度等。它允许你使用内置的滤镜功能，或自定义滤镜效果，以增强或改变元素的外观。但是它會讓底下所有元素一起受到影響*/
+    /* body{
+      background: url("./四月.jpg") no-repeat center center / cover;
+      filter: opacity(10%);
+      position: relative;
+    } */
+
+    /*套一個絕對相對路徑關係圖層 可讓它背景變淡*/
+    /* body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5); 50% 透明度的白色叠加层
+      pointer-events: none; 确保叠加层不会影响其他交互
+    } */
+
+    /*第三種是用漸變層元素搭配圖片直接對背景造成效果*/
+    /* 定義畫面背景 */
+    body {
+      /* width: 100%;
+      height: 100vh; */
+      background: 
+        linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+        url('./四月.jpg') no-repeat center center;
+      background-size: cover; /*覆蓋整個圖層*/
+      display: flex;
+      justify-content: center;
+      /*align-items: center 單行物件模式 多行align-content 需要配合 flex-wrap:wrap換行功能*/
+      align-items: center;
+    }
+
+
+    /* 定義登入區塊 */
+    .login{
+      width: 600px;
+      height: 500px;
+      background-color: rgba(0, 0, 0, .5);
+      border-radius: 10px;
+      border: 10px solid #fff;
+      box-shadow: 0 0 60px #000;
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    /*定義表單樣式*/
+    .form{
+      width: 400px;
+      /* font-family: 'Noto Sans TC', Sans-serif; */
+    }
+
+  /*定義表單項目內容設定*/
+    .form h2{
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #fff;
+    }
+
+    .form .group{
+      margin-bottom: 20px;
+    }
+    .form label{
+      line-height: 2;
+      /* font-family: 'Noto Sans TC', Sans-serif; */
+    }
+
+    .form input{
+      width: 100%;
+      border: 1px solid #aaa;
+      line-height: 3;
+      border-radius: 5px;
+    }
+    
+    /* 要使用此種方式作法先在父層實際歸0文字 然後在子層撐開20達成效果 其實不論數字多少都可以達成此效果(如有問題可以在html中，使兩buttom標籤緊靠一起不要有空格也有同樣直接效果*/
+    .form .btn-group{
+      font-size: 0;
+      margin-top: 50px;
+      
+    }
+
+    .form  .btn{
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+      background-color: #6ab4fe;
+      width: 190px;
+      padding: 10px 0;
+      color: #fff;
+      /* font-family: 'Noto Sans TC', Sans-serif; */
+    }
+
+    .form .btn + .btn{
+      margin-left: 20px;
+    }
+
+
+
+   
+  </style>  
+</head>
+<body>
+  <div class="login">
+    <form action="" class="form">
+      <h2>會員登入</h2>
+      <div class="group">
+        <label for="user_id">帳號</label>
+        <input type="text" name="" id="user_id">
+      </div>
+      <div class="group">
+        <label for="user_password">密碼</label>
+        <input type="password" name="" id="user_password">
+      </div>
+      <div class="btn-group">
+        <button class="btn">登入</button>
+        <button class="btn">取消</button>
+      </div>
+    </form>
+  </div>
+
+
+
+</body>
+</html>

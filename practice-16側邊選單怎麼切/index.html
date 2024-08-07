@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timo都能懂的這個網頁怎麼切：直式側邊選單怎麼切</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9a8f7718b2.js" crossorigin="anonymous"></script>
+  <style type="text/css">
+    /* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"); */
+    
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      /* font-family: 'Nato Sans TC', Sans-serif; */
+    }
+
+    html,body{
+      height: 100%;
+    }
+
+    body{
+      background-color: #546377;
+    }
+
+    .side-menu{
+      width: 300px;
+      height: 100%;
+      padding: 50px 0;
+      /*box-sizing 控制容器寬高 作用對象(.side-menu)的空間 border-box限縮在邊框邊緣範圍內 網頁就可以不用出現卷軸*/
+      box-sizing: border-box;
+      background-image: linear-gradient(0deg, #3381b0, #c2196c);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 5px 0px 10px hsla(240, 40%, 15%, 0.6);
+    }
+
+    .side-menu form{
+      display: flex;
+      /*margin 三個時候是 上 左&右 下*/
+      margin: 0 10px 50px;
+      border-radius: 100px;
+      border: 1px solid rgb(255, 253, 255, .4);
+    }
+
+    .side-menu form input,
+    .side-menu form button{
+      border: none;
+      background-color: transparent;
+      color: #fff;
+      padding: 5px 10px;
+    }
+
+    .side-menu form input:focus,
+    .side-menu form button:focus{
+      outline: none;
+    }
+
+    .side-menu form input{
+      /* border: none;
+      background-color: transparent;
+      color: #fff;
+      padding: 5px 10px; */
+      width: 230px;
+    }
+
+    /*placeholder 輸入框簡單提示語功能 在輸入框中要提醒使用者輸入的內容 opacity: 透明度*/
+    .side-menu form input::placeholder{
+      color: #fff;
+      opacity: 0.5;
+    }
+
+    .side-menu form button{
+      /* border: none;
+      background-color: transparent;
+      padding: 5px 10px; */
+      width: 50px;
+    }
+
+    nav a{
+      display: block;
+      padding: 10px;
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      font-family: 'Nato Sans TC', Sans-serif;
+    }
+    
+    /*創建偽元素::before 一定要創建 content: ''; 否則偽元素將不被定義存在*/
+    nav a + a::before{
+      content: '';
+      position: absolute;
+      border-top: 1px solid rgb(255, 255, 255, .4);
+      left: 10px;
+      right: 10px;
+      top: 0;
+    }
+
+    nav a .fa-solid{
+      margin-right: -1.3em;
+      /*scale(0) 只圖片縮放 為0時圖片縮小不見*/
+      transform: scale(0);
+      transition: .3s;
+    }
+
+    nav a:hover .fa-solid{
+      margin-right: 0em;
+      transform: scale(1);
+    }
+
+
+  </style>  
+</head>
+<body>
+<div class="side-menu">
+  <form>
+    <input type="search"  placeholder="請輸入關鍵字">
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+  </form>
+  <nav>
+    <a href="#">
+      <i class="fa-solid fa-utensils"></i>
+      切版練習</a>
+    <a href="#">
+      <i class="fa-solid fa-gavel"></i>
+      CSS挑戰</a>
+    <a href="#">
+      <i class="fa-solid fa-object-group"></i>
+      Vue 系列</a>
+    <a href="#">
+      <i class="fa-solid fa-users"></i>
+      挑戰鐵人賽</a>
+  </nav>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

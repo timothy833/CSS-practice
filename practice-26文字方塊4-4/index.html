@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timo都能懂的這個網頁怎麼切：文字方塊13</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"> -->
+  <!-- <script src="https://kit.fontawesome.com/9a8f7718b2.js" crossorigin="anonymous"></script> -->
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+    
+    /*畫面reset*/
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Noto Sans TC', Sans-serif;
+    }
+    
+    body{
+  
+    }
+
+    .wrap{
+      margin: 100px 0;
+    }
+
+    .container{
+      width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .container h1{
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 90px;
+      margin-bottom: .5em;
+      display: flex;
+    }
+
+    /* ::before 伪元素会在 h1 元素内容的前面生成，因此会显示在 h1 的文本上方。
+        ::after 伪元素会在 h1 元素内容的后面生成，因此会显示在 h1 的文本下方。
+        display: block 确保伪元素独占一行，使得水平线与 h1 元素的文本分别在不同的行上。 */
+    .container h1::before,
+    .container h1::after{
+      content: '';
+      display: block;
+      width: 4em;
+      height: 5px;
+      flex-grow: 1;
+      background-color:#aaa;
+      margin: auto;
+    }
+
+    .container h1::before{
+      margin-right: .5em;
+    }
+    .container h1::after{
+      margin-left: .5em;
+    }
+
+    .container .txt{
+      box-sizing: border-box;     
+    }
+ 
+    .container .txt p{
+      margin-bottom: 1em;
+    }
+
+
+
+
+
+  
+  </style>  
+</head>
+<body>
+<div class="wrap">
+  <div class="container">
+    <!-- h1 也可以考慮再包一層當作處理方式 <div></div> -->
+    <h1>CSS Timo is Awesome</h1>
+    <div class="txt">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

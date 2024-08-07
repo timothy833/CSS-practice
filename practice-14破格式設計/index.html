@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timo都能懂的這個網頁怎麼切：破格式設計</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"> -->
+  <script src="https://kit.fontawesome.com/9a8f7718b2.js" crossorigin="anonymous"></script>
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+    
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Nato Sans TC', Sans-serif;
+    }
+
+    .wrap{
+      display: flex;
+      width: 1200px;
+      margin: 100px auto;
+      /* background-color: #999; */
+      /*因為icon 容器會突出父容器 所以為了防止報版 增高父容器邊框*/ 
+      padding-top: 75px;
+    }
+
+    /*因為100%是以父元素為基準，body的父元素是html，html本身沒有高度，所以設定為填滿視窗高度*/
+    html, body{
+      height: 100%;
+    }
+
+    body{
+      display:flex;
+      align-items: center;
+      background-image: linear-gradient(-45deg, #fffaf0, #f8c3c1);
+    }
+
+    .item{
+      width: 370px;
+      margin: 0 15px;
+      /*文字對齊 左右 是用 start & end*/
+      text-align: center;
+      border: 10px solid #f9cec2;
+      background-color: #fff;
+      border-radius: 20px;
+      /*box-shadow 陰影功能: 水平 垂直  模糊半徑 擴展半徑(可選)  顏色*/
+      box-shadow: 10px 20px 50px #f7b6a7;
+    }
+
+    .item h3{
+      color: #f5afac;
+      margin-bottom: 1em;
+      padding-bottom: 0.5em;
+      position: relative;
+    }
+
+    .item h3::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      right: 50%;
+      bottom: 0;
+      border-bottom: 1px solid;
+      transition: .3s;
+    }
+    
+
+
+    .item p{
+      color:#ccc;
+      line-height: 1.5;
+    }
+
+    .item .icon{
+      width: 150px;
+      height: 150px;
+      background-color: #fff;
+      margin: -75px auto 0;
+      font-size: 85px;
+      /*行高 提醒:當width跟行高一樣時，又只有一行文本或圖片就會自動垂直居中*/
+      line-height: 150px;
+      border-radius: 50%;
+      color: #f5afac;
+      position: relative;
+    }
+
+    .item .icon::before{
+      content:'';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      /* border: 10px solid #f9cec2; */
+      border-top: 10px solid #f9cec2;
+      /*transparent 透明的意思*/
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid transparent;
+      border-right: 10px solid #f9cec2;
+      left: -10px;
+      top: -10px; 
+      border-radius: 50%;
+      /*rotate 旋轉*/
+      transform: rotate(-45deg);
+    }
+    
+    /*animation: ss 0.3s linear infinite alternate;：
+    ss：动画的名称。这个名称对应一个在其他地方定义的关键帧动画。
+    0.3s：动画的持续时间，这里是 0.3 秒。
+    linear：动画的时间函数，表示动画以相同的速度进行，不加速也不减速。
+    infinite：动画将无限次重复。
+    alternate：动画在每个循环中交替方向。例如，第一遍动画会从开始到结束，第二遍会从结束到开始，以此类推。*/
+    .item:hover .fa-solid{
+      animation: ss .3s linear infinite alternate;
+    }
+
+    .item:hover h3::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+
+    .item .txt{
+      padding: 20px 20px 2em;
+    }
+
+    @keyframes ss{
+          0%{ transform: rotate(-10deg) ;}
+        100%{ transform: rotate(10deg);}
+    }
+
+  </style>  
+</head>
+<body>
+<div class="wrap">
+  <div class="item">
+    <div class="icon">
+      <i class="fa-solid fa-gavel"></i>
+    </div>
+    <div class="txt">
+      <h3>暴力網頁練習</h3>
+      <p>暴力網頁練習是強度不低的練習過程狀態, 內容彌補了過往提摩CSS切版不足的能力, 但也考驗自身的整理資料跟記憶能力, 期望透過扎實的訓練跟消化, 轉化成為專業工作能力。
+      </p>
+    </div>
+  </div>
+  <div class="item">
+    <div class="icon">
+      <i class="fa-solid fa-thumbs-up"></i>
+    </div>
+    <div class="txt">
+      <h3>提摩都懂切版</h3>
+      <p>提摩都懂的這個網頁怎麼切,  是轉職路上努力練習的主要內容, 主要學習如何在短時間內簡單快速將一個網頁畫面完成, 也由於時間有限, 所以沒有處理太多RWD部分, 日後改版逐步更新了。</p>
+    </div>
+  </div>
+  <div class="item">
+    <div class="icon">
+      <i class="fa-solid fa-bell"></i>
+    </div>
+    <div class="txt">
+      <h3>Timo都懂切版</h3>
+      <p>固定每周從早到晚在 VScode 編輯器上, 偶爾會偷懶休息, 練習從基礎入門到業界實務應有盡有, 從知識到實作無一不寫, 還有Vue3不定期更新系列, 開啟成為前端修煉之路。</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

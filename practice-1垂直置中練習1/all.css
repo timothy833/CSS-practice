@@ -1,0 +1,21 @@
+h2{
+    text-align: center;
+}
+
+.box{
+    width: 500px;
+    height: 250px;
+    border: 1px solid #f00;
+    margin: auto;
+}
+
+.content{
+    width: 400px;
+    background: #ccc;
+    position: relative;
+    top: 50%;
+    /* 子物件的上方空出50%的父層高度*/
+    transform: translateY(-50%);
+    /* translate 是一個很棒的屬性，由於 translate 的百分比單位是利用物件自身的尺寸作為 100% Y是指垂直軸*/
+    margin: auto;
+}

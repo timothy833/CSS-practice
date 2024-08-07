@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timo都能懂的這個網頁怎麼切：文字方塊6</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"> -->
+  <!-- <script src="https://kit.fontawesome.com/9a8f7718b2.js" crossorigin="anonymous"></script> -->
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+    
+    /*畫面reset*/
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Noto Sans TC', Sans-serif;
+    }
+    
+
+    .container{
+      width: 1200px;
+      margin: auto;
+      padding: 100px 0;
+    }
+    .wrap{
+      margin: 100px 0;
+    }
+    .container h1{
+      width: 400px;
+      font-size: 70px;
+      box-sizing: border-box;
+      padding: 15px ;
+      color: #aaa;
+      float: right;
+      position: relative;
+    }
+
+    .container h1::before{
+      content: '';
+      /* display: block; 這行可寫可不寫 因為絕對定位模式自動會成block*/
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      /* border: 25px solid #f1C555; */
+      background-color: #f1C555;
+      bottom: 0;
+      z-index: -1;
+      transform: rotate(20deg);
+    }
+
+    /* display: block; 這行可寫可不寫 因為絕對定位模式自動會成block
+    (補充說明還是盡量要寫，因為不同瀏覽器可能產生狀況不一樣) */
+    .container h1::after{
+      content: '';
+      display: block; 
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 25px solid #eee;
+      bottom: 0;
+      z-index: -2;
+      transform: rotate(10deg);
+    }
+
+    .container .txt{
+      column-count: 2;
+      column-gap: 30px;
+    }
+ 
+    .container p{
+      line-height: 1.6;
+      margin-bottom: 1em;
+    }
+
+
+
+
+
+  
+  </style>  
+</head>
+<body>
+<div class="wrap">
+  <div class="container">
+    <!-- h1 也可以考慮再包一層當作處理方式 <div></div> -->
+    <h1>CSS Timo is Awesome</h1>
+    <div class="txt">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

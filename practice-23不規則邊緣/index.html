@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timo都能懂的這個網頁怎麼切：不規則邊緣</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"> -->
+  <!-- <script src="https://kit.fontawesome.com/9a8f7718b2.js" crossorigin="anonymous"></script> -->
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+    
+    /*畫面reset*/
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      /* font-family: 'Noto Sans TC', Sans-serif; */
+    }
+
+    .banner{
+      height: 700px;
+      background: url('./四月.jpg') center top/ cover;
+    }
+
+    /* 設定整體文章空間 */
+    .sec .container{
+      width: 1200px;
+      margin: auto;
+      display: flex;
+      padding: 100px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /*設定為 .sec::after 絕對定位父層*/
+    .sec{
+      position: relative;
+      
+    }
+
+    /* 設定每個文字區塊&字體 */
+    .sec .item{
+      width: 570px;
+      margin: 0 15px;
+      font-family: 'Noto Sans TC', Sans-serif;
+    }
+
+    /* 設定字體段落間距 */
+    .sec .item h2{
+      margin-bottom: 1.2em;
+    }
+    .sec .item p{
+      line-height: 1.7;
+      margin-bottom: 1.6em;
+    }
+
+    /*處理區塊可以突出造成不規則形狀 !!重要陰影可以設定多個 陰影參數複習 (水平 垂直 模糊程度 擴散半徑 顏色)*/
+    .sec::after{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: #fff;
+      top: 0;
+      left: 50%;
+      transform: translateX(-30%)  translateY(-50%);
+      border-radius: 50%;
+      box-shadow: 178px  0px 0px 30px #fff,
+                  327px 34px 0 20px #fff, 
+                  480px 9px 0px 60px #fff,
+                  690px 71px 0 60px#fff, 
+                  888px 0 0 89px #fff,
+
+                  -178px  0px 0px 30px #fff,
+                  -327px 34px 0 20px #fff, 
+                  -480px 9px 0px 60px #fff,
+                  -690px 71px 0 60px#fff, 
+                  -880px 0 0 89px #fff,
+                  -1100px 50px 0 89px #fff,
+                  
+                  100px 0 0 56px rgba(0, 0, 0, .5),
+                  298px 10px 0 56px rgba(0, 0, 0, .5),
+                  540px -40px 0 50px  rgba(0, 0, 0, .5),
+                  740px -30px 0 30px rgba(0, 0, 0, .5),
+                  880px -100px 0 80px rgba(0, 0, 0, .5),
+                  1000px 0 0 80px  rgba(0, 0, 0, .5),
+
+                  -100px 0 0 56px rgba(0, 0, 0, .5),
+                  -298px 10px 0 56px rgba(0, 0, 0, .5),
+                  -540px -40px 0 50px  rgba(0, 0, 0, .5),
+                  -740px -30px 0 30px rgba(0, 0, 0, .5),
+                  -880px -100px 0 80px rgba(0, 0, 0, .5),
+                  -1000px 0 0 80px  rgba(0, 0, 0, .5);               
+    }
+
+    .sec::before{
+      content:'';
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      background-color: #fff;
+      z-index: 1;
+      top: 0;
+    }
+  </style>  
+</head>
+<body>
+<div class="banner"></div>
+
+<div class="sec">
+  <div class="container">
+    <div class="item">
+      <h2>關於提摩都懂得網頁切版</h2>
+      <p>提摩都懂得網頁切版系列是參考 Amos 精心規劃的一系列切版入門教學影片, 針對新手入門網頁設計的內容做練習, 針對想要了解CSS的新手而言, 這是一個非常適合的練習系列, 甚麼! 你說你切不出來?! 有沒有搞錯啊!? 這樣你都切不出來要怎麼一起去業界工作呢? 嗚嗚~這樣會變成連香菇都不如的傢伙!咳...咳...突然開啟了撿到槍模式,抱歉轉職壓力大了點, 對不起!</p>
+      <p>由於業界可能會拿到的版面各式各樣都有, 在金魚都能懂的網頁切版中, 每一個範例都能夠深入延伸思考更多的變化與使用情境, 縱使練習中不是以RWD為主的網頁來設計, 但仍舊能引發思考這類版面在RWD設計時應該要怎樣的變化, 提摩都能懂網頁切版練習, 可說是進入業界練習的必經之路!</p>
+    </div>
+    <div class="item">
+      <h2>關於提摩都必學的網頁切版</h2>
+      <p>提摩都懂得網頁切版系列是參考 Amos 精心規劃的一系列切版入門教學影片, 針對新手入門網頁設計的內容做練習, 針對想要了解CSS的新手而言, 這是一個非常適合的練習系列, 甚麼! 你說你切不出來?! 有沒有搞錯啊!? 這樣你都切不出來要怎麼一起去業界工作呢? 嗚嗚~這樣會變成連香菇都不如的傢伙!咳...咳...突然開啟了撿到槍模式,抱歉轉職壓力大了點, 對不起!</p>
+      <p>由於業界可能會拿到的版面各式各樣都有, 在金魚都能懂的網頁切版中, 每一個範例都能夠深入延伸思考更多的變化與使用情境, 縱使練習中不是以RWD為主的網頁來設計, 但仍舊能引發思考這類版面在RWD設計時應該要怎樣的變化, 提摩都能懂網頁切版練習, 可說是進入業界練習的必經之路!</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

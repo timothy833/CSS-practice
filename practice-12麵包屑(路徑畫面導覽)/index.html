@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timo都能懂的這個網頁怎麼切：麵包屑路徑</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"> -->
+  <!-- <script src="https://kit.fontawesome.com/9a8f7718b2.js" crossorigin="anonymous"></script> -->
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Nato Sans TC', Sans-serif;
+    }
+    body{
+      background-color: #562870;
+    }
+    
+    .wrap{
+      padding: 10px 0;
+      background: #ec008b;
+      /*box-shadow: 陰影效果 四個參數分別為 水平 垂直 陰影半徑  (擴散半徑:可選) 顏色*/
+      /*hsla色彩參數定義：色相（用度數顯露色彩變化）　飽和度　亮度　透明度*/
+      box-shadow: 0px 5px 5px hsla(260, 100%, 20%, 0.5);
+    }
+    .breadcrumb{
+      width: 90%;
+      margin: auto;
+      display: flex;
+    }
+    
+    .breadcrumb li{
+      padding: 0 20px;
+    }
+
+    .breadcrumb a{
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* .breadcrumb a:hover{
+      color: #ff0;
+    } */
+    /* :last-child 選取最後一個物件 */
+    /* .breadcrumb li:last-child a{
+      color: #ff0
+    } */
+    .breadcrumb a:hover, 
+    .breadcrumb li:last-child a{
+      color: #ff0;
+    }
+
+    .breadcrumb li + li{
+      padding-left:0;
+    }
+    /* 『緊跟在對象 A 同層後方的 B』才會做變化+只對後面第一個起反應 */
+    .breadcrumb li + li::before{
+      content: '>';
+      color: #fff;
+      padding-right: 20px;
+    }
+  </style>  
+</head>
+<body>
+<!-- <img src="https://picsum.photos/600/350?random=2"> -->
+ <div class="wrap">
+    <!-- <ul></ul> 清單標籤  <ol></ol>有順序性清單  <li>代表清單中列表項目-->
+    <ol class="breadcrumb">
+      <li><a href="#">CSS提摩</a></li>
+      <li><a href="#">CSS學習</a></li>
+      <li><a href="#">提摩系列</a></li>
+      <li><a href="#">切版技巧</a></li>
+      <li><a href="#">Flex</a></li>
+      <li><a href="#">麵包屑</a></li>
+    </ol>
+ </div>
+
+</body>
+</html>

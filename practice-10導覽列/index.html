@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"> -->
+  <script src="https://kit.fontawesome.com/9a8f7718b2.js" crossorigin="anonymous"></script>
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Nato Sans TC', Sans-serif;
+    }
+    .main-header{
+      background: linear-gradient(8deg, #000,#ccc);
+    }
+    .main-header .container{
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      max-width: 1200px;
+      margin:auto;
+    }
+    .main-header .logo{
+      width: 100px;
+    }
+
+    .main-header .logo img{
+      width: 100%;
+      vertical-align: middle;
+    }
+    .main-header .main-nav{
+      margin: auto;
+      display: flex;
+    }
+    .main-header .main-nav a{
+      text-decoration: none;
+      color: #fff;
+      padding: 5px 1em;
+      position: relative;
+      transform: translateY(0px);
+      transition: .3s;
+
+    }
+    .main-header .main-nav a:hover{
+      /*負數向上移動意思*/
+      transform: translateY(-10px);
+
+    }
+    .main-header .main-nav a::after{
+      content: '';
+      position: absolute;
+      left: 50%;
+      right: 50%;
+      bottom: 0;
+      height: 0;
+      border-bottom: 1px solid #fff;
+      transition: .3s;
+    }
+
+    .main-header .main-nav a:hover::after{
+      left: 0;
+      right: 0;
+
+    }
+
+    .main-header .header-search{
+      display: flex;
+    }
+    /*组合选择器：逗号（,）表示组合选择器，即将多个选择器组合在一起，应用相同的样式规则。*/
+    .main-header .header-search button,
+    .main-header .header-search input{
+      border: none;
+      background-color: #fff;
+      /*padding兩數值時 上下 左右*/
+      padding: 5px 10px;
+
+    }    
+      /*focus偽類模式是指它是滑鼠碰到元素區塊狀態，會產生的反應 
+      類似設定:hover(滑鼠點擊狀態)要產生的反應*/
+    .main-header .header-search button:focus,
+    .main-header .header-search input:focus{
+      outline: none;
+    }    
+    .main-header .header-search button{
+      /*順序順時鐘 左上點鐘方向開始*/
+      border-radius: 0 200px 200px 0;
+
+    }  
+    .main-header .header-search input{
+      border-radius: 200px 0 0 200px;
+    }  
+  </style>  
+</head>
+<body>
+<!-- <img src="https://picsum.photos/600/350?random=2"> -->
+<header class="main-header">
+<div class="container">
+  <a href="#" class="logo">
+    <img src="logo.png" alt="restaurant | eat">
+  </a>
+  <nav class="main-nav">
+    <a href="#">提摩都能懂系列</a>
+    <a href="#">暴力網頁入門系列</a>
+    <a href="#">Tim香菇系列</a>
+    <a href="#">RWD原來醬子系列</a>
+  </nav>
+  <form  class="header-search">
+    <input type="search" name="" id="">
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+  </form>
+</div>
+</header>
+</body>
+</html>

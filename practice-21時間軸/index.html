@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timo都能懂的這個網頁怎麼切：時間軸</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"> -->
+  <!-- <script src="https://kit.fontawesome.com/9a8f7718b2.js" crossorigin="anonymous"></script> -->
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+    
+    /*畫面reset*/
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Noto Sans TC', Sans-serif;
+    }
+
+    body{
+      background-color: #edece1;
+
+    }
+
+    /*版面水平置中寬度設定*/
+    .wrap{
+      width: 960px;
+      margin: auto;
+    }
+    .wrap::after{
+      content: '';
+      display: block;
+      width: 0px;
+      height: 0px;
+      clear: both;
+    }
+    
+    /*設定時間清單內邊距 讓時間軸跟標題有點空間*/
+    .timeline{
+      padding: 100px 0 200px;
+    }
+
+
+    /*時間軸裡面各項區塊內部設定*/
+    .timeline li{
+      width: 50%;
+      box-sizing: border-box;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    .timeline li:nth-child(odd){
+      float: left;
+      padding-right: 100px;
+    }
+
+    .timeline li:nth-child(even){
+      float: right;
+      padding-left: 100px;
+      transform: translateY(50%);
+    }
+
+    /*處理連結邊框時間軸的主軸線*/
+    /*只設置top為0時，會以默認值方式視同為從左邊開始 不用再加寫left:0*/
+    .timeline li::after{
+      content: '';
+      position: absolute;
+      width: 1px;
+      top: 0;
+      height: 100%;
+      background-color: #ccc;
+    }
+    /* .timeline li:nth-child(odd)::after{
+      right: 0;
+    } */
+    /* .timeline li:nth-child(odd)::after{
+      content: '';
+      position: absolute;
+      width: 1px;
+      top: 0;
+      height: 100%;
+      background-color: #ccc;
+      right: 0;
+      z-index: -1;
+    } */
+    .timeline li:last-child::after{
+      height: 50%;
+    }
+
+    /*時間軸圓點點設定*/
+    .timeline li::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #aaa;
+      z-index: 2;
+    }
+    .timeline li:nth-child(odd)::before{
+      right: -10px;
+    }
+    .timeline li:nth-child(even)::before{
+      left: -10px;
+     
+    }
+
+
+    .timeline a{
+      /*再次重要提醒block設定是因為a標籤原本是行內模式標籤, 要設定成塊狀才能定義寬高、邊框等樣式*/
+      display: block;
+      /*文字樣式設定:none就是消除*/
+      text-decoration: none;
+      background-color: #fff;
+      border: 1px solid #aaa;
+      box-sizing: border-box;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow:  3px 3px 5px #888;
+    }
+
+    /*摸到畫面連結後的效果*/
+    .timeline a:hover{
+      background-color: #6fa5f6;
+    }
+    .timeline a:hover h2,
+    .timeline a:hover p{
+      color: #fff;
+      border-color: #fff;
+    }
+
+
+    /*配合絕對定位跟偽元素出左右橫線連接主軸線*/
+    .timeline h2{
+      color: #333;
+      font-weight: 700;
+      border-bottom: 1px solid #333;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+    }
+    .timeline h2::after{
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100px;
+      background-color: #aaa;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .timeline li:nth-child(odd) h2::after{
+        right: 0;
+    }
+    .timeline li:nth-child(even) h2::after{
+        left: 0;
+    }
+
+    .timeline p{
+      color: #666;
+      font-weight: 100;
+    }
+   
+  </style>  
+</head>
+<body>
+<div class="wrap">
+  <h1>Timo都能懂的這個網頁怎麼切,提摩都懂了大家趕快一起練系列</h1>
+  <p>提摩都能理解懂得練習系列, 是跟Amos針對網頁設計新手所設計的一套入門學習系列內容, 一系列的練習內容從HTML 到 CSS 以及bootstrap 框架還有 JQuery 通通都包含在內拉, 可說是新手學習最佳資源寶藏阿, 重點是...完全免費!!!</p>
+  <ul class="timeline">
+    <li>
+      <a href="#" class="">
+        <h2>圖文滿版區塊</h2>
+        <p>本篇重點觀念回顧: 列出重點就是要好好可以地講內容釐清複習拉, 有問題請看Timo筆記跟Amos影片課程內容回放參考喔!</p>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="">
+        <h2>互動圖文卡片</h2>
+        <p>本篇重點觀念回顧: 列出重點就是要好好可以地講內容釐清複習拉, 有問題請看Timo筆記跟Amos影片課程內容回放參考喔!</p>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="">
+        <h2>人員介紹卡片</h2>
+        <p>本篇重點觀念回顧: 列出重點就是要好好可以地講內容釐清複習拉, 有問題請看Timo筆記跟Amos影片課程內容回放參考喔!</p>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="">
+        <h2>交錯漂浮版</h2>
+        <p>本篇重點觀念回顧: 列出重點就是要好好可以地講內容釐清複習拉, 有問題請看Timo筆記跟Amos影片課程內容回放參考喔!</p>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="">
+        <h2>超通用橫式版面</h2>
+        <p>本篇重點觀念回顧: 列出重點就是要好好可以地講內容釐清複習拉, 有問題請看Timo筆記跟Amos影片課程內容回放參考喔!</p>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="">
+        <h2>各種切版技巧原理總集篇</h2>
+        <p>本篇重點觀念回顧: 列出重點就是要好好可以地講內容釐清複習拉, 有問題請看Timo筆記跟Amos影片課程內容回放參考喔!</p>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="">
+        <h2>網頁頁尾區塊</h2>
+        <p>本篇重點觀念回顧: 列出重點就是要好好可以地講內容釐清複習拉, 有問題請看Timo筆記跟Amos影片課程內容回放參考喔!</p>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="">
+        <h2>導覽列</h2>
+        <p>本篇重點觀念回顧: 列出重點就是要好好可以地講內容釐清複習拉, 有問題請看Timo筆記跟Amos影片課程內容回放參考喔!</p>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="">
+        <h2>變化你的導覽列</h2>
+        <p>本篇重點觀念回顧: 列出重點就是要好好可以地講內容釐清複習拉, 有問題請看Timo筆記跟Amos影片課程內容回放參考喔!</p>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="">
+        <h2>網站麵包屑</h2>
+        <p>本篇重點觀念回顧: 列出重點就是要好好可以地講內容釐清複習拉, 有問題請看Timo筆記跟Amos影片課程內容回放參考喔!</p>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="">
+        <h2>訂單進度條</h2>
+        <p>本篇重點觀念回顧: 列出重點就是要好好可以地講內容釐清複習拉, 有問題請看Timo筆記跟Amos影片課程內容回放參考喔!</p>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="">
+        <h2>訊息對話紀錄</h2>
+        <p>本篇重點觀念回顧: 列出重點就是要好好可以地講內容釐清複習拉, 有問題請看Timo筆記跟Amos影片課程內容回放參考喔!</p>
+      </a>
+    </li>
+  </ul>
+
+
+
+</div>
+</body>
+</html>

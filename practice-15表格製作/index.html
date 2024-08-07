@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timo都能懂的這個網頁怎麼切：表格製作</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"> -->
+  <!-- <script src="https://kit.fontawesome.com/9a8f7718b2.js" crossorigin="anonymous"></script> -->
+  <style type="text/css">
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+    
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      /* font-family: 'Nato Sans TC', Sans-serif; */
+    }
+      /*html, body{  height: 100%; }  這行式會扣掉卷軸高度 but用height: 100vh 不會定義不同*/
+    html, body{
+      height: 100%;
+    }
+
+    body{
+      display: flex;
+      align-items: center;
+      background-image: linear-gradient(90deg, #3d5894, #08c7a5);
+    }
+
+    .table{
+      width: 800px;
+      margin: auto;    
+    }
+
+    .table table{
+      width: 100%;
+      border: 3px double #666;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+
+    .table thead{
+      background: #333;
+      color: #fff;
+    }
+
+    .table thead th:first-child{
+      border-radius: 7px 0 0 0;
+    }
+
+    .table thead th:last-child{
+      border-radius: 0 7px 0 0;
+    }
+    /*even偶數*/
+    .table tbody tr:nth-child(even){
+      background-color: #ffa;
+    }
+
+    .table tbody a{
+      /* text-decoration 指定文本樣式裝飾線 例如: none 就是指消除文本樣式 因此連結底下的橫線可消失*/
+      /* text-decoration: none; */
+      color: #777;
+    }
+
+    .table tbody tr:hover{
+      background-color: #FEE;
+    }
+
+    .table tfoot th:first-child{
+      border-radius: 0 0 0 7px;
+    }
+
+    .table tfoot th:last-child{
+      border-radius: 0 0 7px 0;
+    }
+
+    .table th{
+      border: 1px solid #666;
+      padding: 6px 10px;
+      font-family: 'Nato Sans TC', Sans-serif;
+    }
+
+    .table td{
+      border: 1px solid #666;
+      padding: 6px 10px;
+      font-family: 'Nato Sans TC', Sans-serif;
+    }
+
+    .table caption{
+      caption-side: bottom;
+      text-align: right;
+      padding: 10px 0;
+      color: #CCC;
+    }
+
+    .table caption a{
+      color: #eee;
+    }
+
+  </style>  
+</head>
+<body>
+  <div class="table">
+    <table>
+      <!-- caption 為設定表格標題  可當標題或註解-->
+      <caption>
+        Timo練習網頁切版製作進度條: 資料來源-
+        <a href="https://youtu.be/zRREfvlLFIU?si=iDKgMISh65kvRhqt">CSScoke Youtube頻道/a>
+      </caption>
+      <thead>
+        <!-- tr:代表表格列(水平) -->
+        <tr>
+          <!-- 代表表格中的單元格 -->
+          <th scope="col">基礎版面</th>
+          <th scope="col">破格式版面</th>
+          <th scope="col">滿版</th>
+          <th scope="col">選單</th>
+          <th scope="col">表單</th>
+          <th scope="col">表格</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>   
+          <td><a href="#">圖文滿版</a></td>
+          <td>交錯漂浮版</td>
+          <td>圖文滿版</td>
+          <td>導覽列</td>
+          <td>敬請期待</td>
+          <td>敬請期待</td>
+        </tr>
+        <tr>   
+          <td>互動圖文卡片</td>
+          <td>破格式設計</td>
+          <td>超通用模式版面</td>
+          <td>變化我的導覽列</td>
+          <td>敬請期待</td>
+          <td>敬請期待</td>
+        </tr>
+        <tr>   
+          <td>人員介紹卡片</td>
+          <td>敬請期待</td>
+          <td>敬請期待</td>
+          <td>網站麵包屑</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>   
+          <td>超通用橫式版面</td>
+          <td></td>
+          <td></td>
+          <td>敬請期待</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>   
+          <td>網頁頁尾</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>   
+          <td>方塊酥版面</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+    </tbody>
+    <tfoot>
+          <!-- tr:代表表格列(水平) -->
+          <tr>
+          <!-- 代表表格中的單元格 -->
+          <td>備註</td>
+          <!-- colspan 誇欄位格子使用，寫數字幾就是在同一行跨了幾個格子 -->
+          <td colspan="5">以上資料僅為Timo在網路上查找練習做為使用</td>
+        </tr>
+    </tfoot>    
+    </table> 
+  </div>
+
+</body>
+</html>
