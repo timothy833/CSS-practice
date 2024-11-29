@@ -61,18 +61,18 @@
 
     /*處理連結邊框時間軸的主軸線*/
     /*只設置top為0時，會以默認值方式視同為從左邊開始 不用再加寫left:0*/
-    .timeline li::after{
+    /* .timeline li::after{
       content: '';
       position: absolute;
       width: 1px;
       top: 0;
       height: 100%;
       background-color: #ccc;
-    }
+    } */
     /* .timeline li:nth-child(odd)::after{
       right: 0;
     } */
-    /* .timeline li:nth-child(odd)::after{
+    .timeline li:nth-child(odd)::after{
       content: '';
       position: absolute;
       width: 1px;
@@ -81,7 +81,20 @@
       background-color: #ccc;
       right: 0;
       z-index: -1;
+    }
+
+    /* .timeline li:nth-child(even)::after{
+      content: '';
+      position: absolute;
+      width: 1px;
+      top: 0;
+      height: 100%;
+      background-color: #ccc;
+      left: 0;
+      z-index: -5;
     } */
+
+
     .timeline li:last-child::after{
       height: 50%;
     }
@@ -103,8 +116,7 @@
       right: -10px;
     }
     .timeline li:nth-child(even)::before{
-      left: -10px;
-     
+      left: -10px;     
     }
 
 
